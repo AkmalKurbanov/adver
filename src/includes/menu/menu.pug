@@ -1,0 +1,85 @@
+mixin list(data)
+  ul
+    each item, index in  data.items
+      if index == 0
+        li.nav__item.nav__item_active
+          a(href="#")=item.title
+          if item.sublevel 
+            .trigger-sub-menu
+              i.icon-arrow3
+            +list(item)
+      else
+        li.nav__item
+          a(href="#")=item.title
+          if item.sublevel 
+            +list(item)
+
+.menu
+  .menu__container
+    .menu__control
+      .menu__col
+        .menu__return-arrow
+          i.icon-arrow2
+        .menu__logo
+          a(href="#")
+            img(src="/assets/img/logo2.svg", alt="")
+      .menu__col        
+        .menu__close
+          i.icon-close
+    .cols-wrap
+      .main-col
+        .search
+          form(action="")
+            .search__field-wrap
+              input(type="text" placeholder="Поиск").search__input
+              button(type="submit").search__button
+                i.icon-search
+        .menu__nav
+          .menu__nav-item
+            nav.nav
+
+              - var data = { "items": [{"title": "УСЛУГИ", "sublevel": true, "items":[{"title": "Разработка сайтов","sublevel": true,"items":[{"title": "Дизайн сайтов"},{"title": "Верстка сайтов"},{"title": "Програмирование"},{"title": "Мобильные приложения"},{"title": "Разработка логотипов"},{"title": "SEO & SMM"}]},{"title": "Полиграфия"},{"title": "Дизайн"},{"title": "Продакнш"},{"title": "Медиа размещения"},{"title": "Наружная реклама"},{"title": "Издательство"},{"title": "Event"}]}, {"title": "КОМПАНИЯ", "sublevel": true, "items":[{"title": "О компании"},{"title": "Команда"},{"title": "Партнеры"},{"title": "Производство"},{"title": "Отзывы"},{"title": "Документы"},{"title": "Реквизиты"},{"title": "Вакансии"},{"title": "Вопрос ответ"}]},{"title": "НАШИ РАБОТЫ"},{"title": "КОНТАКТЫ"}]}
+              +list(data)
+
+      .secondary-col
+        .btn-wrap
+          .btn ЗАДАТЬ ВОПРОС
+        .menu__contacts.menu-contacts
+          .menu-contacts__items
+            a(href="#" class="menu-contacts__item") 
+              i.icon-mark2
+              | г.Бишкек     
+
+          .menu-contacts__items
+            .dropdown-wrap
+              a(href="#" class="callback") 
+                i.icon-phone
+                | 755 21 7779 
+              .dropdown
+                .dropdown__wrap
+                  mixin phone(phone, title)
+                    .dropdown__item
+                      a(href="ertrytryt" class="dropdown__phone")=phone 
+                        span.dropdown-wrap__title=title
+                  +phone('755 21 7777','Отдел продаж')
+                  +phone('755 21 7776','Бухгалтерия')
+            a(href="#" class="dropdown-wrap__title") Заказать звонок
+
+          .menu-contacts__items
+            .dropdown-wrap
+              a(href="#" class="dropdown__mail")
+                i.icon-envelope
+                | office@adver.kg
+              .dropdown
+                .dropdown__wrap
+                  mixin mail(mail, title)
+                    .dropdown__item
+                      a(href="#" class="dropdown__mail")=mail 
+                        span.dropdown-wrap__title=title
+                  +mail('office@adver.kg1','Отдел продаж')
+                  +mail('office@adver.kg','Бухгалтерия')     
+          .menu-contacts__items       
+            .menu-contacts__item  
+              i.icon-mark
+              | Рекламный холдинг “Adver Group” Кыргызская Республика, г.Бишкек,ул.Малдыбаева 73.
+        include ../../includes/social/social              

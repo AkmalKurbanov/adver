@@ -1,0 +1,47 @@
+header.header.header_flush
+  .header__wrap
+    .header__col
+      .hamburger
+        i
+        i
+        i
+      .header__logo
+        a(href="#")
+          img(src="/assets/img/logo.svg", alt="")
+      nav.header__mnu.nav
+        include ../../includes/nav/nav
+    .header__col
+      .header__control
+        a(href="#") г.Бишкек
+      .header__control
+        .header__control-dropdown.dropdown-wrap
+          a(href="#" class="callback") 755 21 7779 
+          .dropdown
+            .dropdown__wrap
+              mixin phone(phone, title)
+                .dropdown__item
+                  a(href="#" class="dropdown__phone")=phone 
+                    span.dropdown-wrap__title=title
+              +phone('755 21 7777','Отдел продаж')
+              +phone('755 21 7776','Бухгалтерия')
+        a(href="#" class="dropdown-wrap__title") Заказать звонок
+
+      .header__control
+        .header__control-dropdown.dropdown-wrap
+          a(href="#" class="dropdown__mail") office@adver.kg
+          .dropdown
+            .dropdown__wrap
+              mixin mail(mail, title)
+                .dropdown__item
+                  a(href="" class="dropdown__mail" data-mail=mail)=mail 
+                    span.dropdown-wrap__title=title
+              +mail('office@adver.kg','Отдел продаж')
+              +mail('office@adver.kg','Бухгалтерия')      
+        a(href="#" class="dropdown-wrap__title") НАПИСАТЬ СООБЩЕНИЕ
+              
+      .header__control
+        .search-trigger
+          i.icon-search
+
+include ../../includes/menu/menu
+include ../../includes/float-auxiliary-panel/float-auxiliary-panel

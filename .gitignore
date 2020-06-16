@@ -1,0 +1,5 @@
+node_modules
+.idea
+dist/includes
+dist/layout
+dist/assets/data.json

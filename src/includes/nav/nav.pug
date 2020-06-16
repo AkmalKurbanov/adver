@@ -1,0 +1,20 @@
+mixin list(data)
+  ul
+    each item, index in  data.items
+      if index == 0
+        li.nav__item.nav__item_active
+          a(href="#")=item.title
+          if item.sublevel 
+            .trigger-sub-menu
+              i.icon-arrow3
+            +list(item)
+      else
+        li.nav__item
+          a(href="#")=item.title
+          if item.sublevel 
+            +list(item)
+
+
+
+- var data = { "items": [{"title": "ГЛАВНАЯ"}, {"title": "КОМПАНИЯ", "sublevel": false, "items":[{"title": "Второй уровень"},{"title": "Второй уровень"},{"title": "Второй уровень"},{"title": "Второй уровень"}]}, {"title": "УСЛУГИ"},{"title": "НАШИ РАБОТЫ"},{"title": "КОНТАКТЫ"}]}
++list(data)

@@ -1,0 +1,10 @@
+.float-auxiliary-panel 
+  ul
+    mixin float-auxiliary-panel(link,item)
+      li 
+        a(href=link)
+          i(class=item)
+    +float-auxiliary-panel('#','icon-phone')    
+    +float-auxiliary-panel('#','icon-envelope')    
+    +float-auxiliary-panel('#','icon-chat')    
+    +float-auxiliary-panel('#','icon-mark')    

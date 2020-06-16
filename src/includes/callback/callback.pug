@@ -1,0 +1,16 @@
+.sliding-panel#callback
+  .sliding-panel__close
+    i.icon-close
+  .sliding-panel__title Заказать звонок
+  form(action="")
+    mixin input(name, label, modify)
+      .input
+        input(type="text" name=name class=modify required).input__field
+        label.input__label=label
+    +input('Имя', 'Ваше имя')    
+    +input('Телефон', 'Телефон','phone-js')     
+    .agree
+      label.agree__swich
+        input.agree__check(type='checkbox')
+        | Я согласен на    
+        a(href="#")  обработку персональных данных

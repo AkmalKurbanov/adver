@@ -1,0 +1,32 @@
+extends layout/main/main
+block title
+  | main
+block main
+  .wrapper
+    .content
+      include includes/header/header
+      .main-screen
+        .hero-slider
+          .swiper-container.hero-slider-js
+            .swiper-wrapper
+              mixin hero-slider(item, brightness)
+                .swiper-slide(class=brightness style="background-image: url("+item+")")
+                  .container
+                    .hero-slider__content
+                      h2.hero-slider__title#title Рекламный холдинг полного цикла
+              +hero-slider('/assets/img/hero-slider.jpg','bright')
+              .swiper-slide(class=brightness style="background-image: url("+item+")")
+                .wrapper_video
+                  video(autobuffer='', playsinline='', webkit-playsinline='', autoplay='', loop='', muted='', style='height: 100%; width:100%;`')
+                    source(src='https://priority.aspro-demo.ru/upload/iblock/b50/b5013a7ac69ec9ae616ba16f919d9ace.mp4', type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
+            .swiper-pagination
+
+     
+
+    include includes/footer/footer
+
+  include includes/callback/callback
+  include includes/question/question
+  include includes/review/review
+
+  include includes/scripts 

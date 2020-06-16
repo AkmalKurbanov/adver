@@ -1,0 +1,27 @@
+.sliding-panel#review
+  .sliding-panel__close
+    i.icon-close
+  .sliding-panel__title Оставить свой отзыв
+  form(action="")
+    mixin input(name, label, modify)
+      .input
+        input(type="text" name=name class=modify required).input__field
+        label.input__label=label
+    +input('Имя', 'Ваше имя')    
+    +input('Должность', 'Должность')     
+    .input.input_file
+      input#file.input__uploader(type='file', name='file')
+      label.input__file.js-labelFile(for='file')
+        i.icon.fa.fa-check
+        span.js-fileName Прикрепить файл
+    .input
+      textarea.input__field.input__field_textarea(required)
+      label.input__label Отзыв *
+
+    .agree
+      label.agree__swich
+        input.agree__check(type='checkbox')
+        | Я согласен на    
+        a(href="#")  обработку персональных данных
+    .btn-wrap
+      button.btn(type="submit") ОТПРАВИТЬ

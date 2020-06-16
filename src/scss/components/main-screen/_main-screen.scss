@@ -1,0 +1,56 @@
+.main-screen {
+  height: 100vh;
+
+  .hero-slider {
+    height: 73.4%;
+
+    .swiper-container,
+    .swiper-wrapper,
+    .swiper-slide {
+      height: 100%;
+    }
+
+    .swiper-pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .swiper-pagination-bullet {
+      outline: none;
+      width: rem(7px);
+      height: rem(7px);
+      transition: $tr;
+
+      &:hover {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      width: 12px;
+      height: 12px;
+    }
+
+    .container {
+      height: 100%;
+    }
+
+    &__content {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    &__title {
+      font-size: rem(45px);
+      color: $bc;
+      line-height: rem(54px);
+      font-weight: 400;
+      max-width: 45%;
+      width: 100%;
+      min-height: 110px;
+    }
+  }
+}

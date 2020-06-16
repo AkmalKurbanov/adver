@@ -1,0 +1,325 @@
+.menu {
+  display: none;
+
+  &__container {
+    max-width: rem(1230px);
+    width: 100%;
+    margin: auto;
+  }
+
+  background-color: $wc;
+  z-index: 9999;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding: rem(30px) 0;
+
+  &__control {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: rem(45px);
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__return-arrow {
+    margin-right: rem(30px);
+    width: rem(30px);
+    height: rem(30px);
+    display: flex;
+    align-items: center;
+  }
+
+  &__return-arrow,
+  &__close {
+    cursor: pointer;
+    transition: $tr;
+
+    &:hover {
+      color: #cf3c3a;
+    }
+  }
+
+  ::-webkit-input-placeholder {
+    color: #C4C4C4;
+    font-size: rem(15px);
+    font-weight: 350;
+  }
+
+  ::-moz-placeholder {
+    color: #C4C4C4;
+    font-size: rem(15px);
+  }
+
+  :-moz-placeholder {
+    color: #C4C4C4;
+    font-size: rem(15px);
+  }
+
+  :-ms-input-placeholder {
+    color: #C4C4C4;
+    font-size: rem(15px);
+  }
+
+  .search {
+    margin-bottom: rem(65px);
+
+    &__field-wrap {
+      border: rem(1px) solid #C4C4C4;
+      border-radius: rem(3px);
+      position: relative;
+    }
+
+    &__input {
+      height: rem(46px);
+      width: 100%;
+      padding: 0 rem(50px) 0 rem(19px);
+      color: #c0baba;
+    }
+
+    &__button {
+      position: absolute;
+      right: rem(11px);
+      top: 50%;
+      transform: translateY(-50%);
+      color: #c4c4c4;
+      font-size: rem(18px);
+      cursor: pointer;
+      transition: $tr;
+
+      &:hover {
+        color: #102948;
+      }
+    }
+  }
+
+  .btn-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: rem(65px);
+
+    .btn {
+      max-width: rem(279px);
+      width: 100%;
+    }
+  }
+
+  .nav {
+    ul {
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        flex-basis: 24%;
+
+        &.nav__item_active {
+          .trigger-sub-menu {
+            display: none;
+          }
+        }
+
+        a {
+          text-transform: uppercase;
+          display: block;
+          color: $bc;
+          font-weight: 400;
+
+          &:hover {
+            color: #CF3C3A !important;
+          }
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          margin-top: rem(20px);
+
+          li {
+            margin-bottom: rem(10px);
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            a {
+              margin: 0;
+              text-transform: none;
+              font-weight: 350;
+            }
+
+
+            &.nav__item_active {
+              position: relative;
+
+              .trigger-sub-menu {
+                position: absolute;
+                font-size: rem(7px);
+                color: #cf3c3a;
+                cursor: pointer;
+                top: rem(2px);
+                right: 0;
+                transition: $tr;
+                width: rem(15px);
+                height: rem(15px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: rem(3px);
+
+                i {
+                  margin-bottom: rem(1px);
+                  margin-right: rem(1px);
+                }
+
+                &:hover {
+                  background-color: #102948;
+                  color: $wc;
+                }
+
+                &.open-sub-menu {
+                  transform: rotate(180deg);
+                  background-color: #102948;
+                  color: $wc;
+                }
+              }
+
+              a {
+                color: #CF3C3A;
+              }
+
+              ul {
+                display: none;
+                margin: rem(14px) 0 rem(5px) rem(20px);
+
+                li {
+                  a {
+                    color: $bc;
+                    margin: 0;
+                  }
+
+                  &.nav__item_active {
+                    a {
+                      color: #CF3C3A;
+                    }
+                  }
+                }
+              }
+            }
+
+            ul {
+              li {
+                a {
+                  font-size: rem(12px);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__contacts {
+    a {
+      position: relative;
+      color: $bc;
+      padding-left: rem(40px);
+      display: inline-block;
+      padding-right: rem(10px);
+
+      i {
+        position: absolute;
+        left: 0;
+      }
+
+      &:after {
+        right: 0;
+        content: '';
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+
+  .menu-contacts {
+    .callback {
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .dropdown {
+      left: rem(18px);
+    }
+
+    &__items {
+      margin-bottom: rem(25px);
+
+      &:last-child {
+        margin-bottom: 0;
+
+        .menu-contacts__item {
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &__item {
+      position: relative;
+      padding-left: rem(40px);
+      display: inline-block;
+      padding-right: rem(10px);
+      color: $bc;
+
+
+      &:after {
+        right: 0;
+        position: absolute;
+        content: '';
+        font-family: 'fonticon';
+        font-size: rem(4px);
+        top: 50%;
+        transform: translateY(-50%) rotate(180deg);
+      }
+
+      i {
+        position: absolute;
+        left: 0;
+      }
+
+      &:after {
+        right: 0;
+        content: '';
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+
+    .dropdown-wrap__title {
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+  }
+}
+
+.cols-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .main-col {
+    max-width: rem(865px);
+    width: 100%;
+  }
+
+  .secondary-col {
+    max-width: rem(279px);
+    width: 100%;
+
+  }
+}

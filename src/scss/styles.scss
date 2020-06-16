@@ -1,0 +1,43 @@
+// Сторонние библиотеки 
+// @import "../js/libs/--/--/";
+
+//---------------------------------------------
+
+// css файлы библиотек/плагинов
+// @import "../../node_modules/--/--/";
+
+@import "../../node_modules/normalize.css/normalize.css";
+@import "../../node_modules/swiper/css/swiper.min.css";
+@import "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css";
+//---------------------------------------------
+
+// подключение сгенерированных иконок(fontello),
+// FontAwesome
+
+@import "../assets/icons/css/fonticon.css";
+// @import "../assets/icons/fontawesome5/web-fonts-with-css/css/fontawesome-all.min.css";
+
+//---------------------------------------------
+
+// подключение css файлов
+
+@import "fonts";
+@import "variables";
+@import "mixins/media";
+
+
+//---------------------------------------------
+
+
+//---------------------------------------------
+
+// Компоненты
+
+@import "components/base";
+@import "components/header";
+@import "components/menu/menu";
+@import "components/social/social";
+@import "components/float-auxiliary-panel/float-auxiliary-panel";
+@import "components/sliding-panel/sliding-panel";
+@import "components/main-screen/main-screen";
+@import "components/footer";

@@ -1,0 +1,72 @@
+.social {
+  margin-top: rem(30px);
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    li {
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        color: $wc;
+        width: rem(40px);
+        height: rem(40px);
+        border-radius: rem(3px);
+      }
+
+      .fb {
+        background-color: #4267b2;
+
+        &:hover {
+          box-shadow: 0px 0px 6px #4267b2;
+        }
+      }
+
+      .vk {
+        background-color: #4c75a3;
+
+        i {
+          margin-left: rem(-7px);
+        }
+
+        &:hover {
+          box-shadow: 0px 0px 6px #4c75a3;
+          ;
+        }
+      }
+
+      .tw {
+        background-color: #1da1f2;
+
+        &:hover {
+          box-shadow: 0px 0px 6px #1da1f2;
+        }
+      }
+
+      .in {
+        background-color: #e1306c;
+
+        &:hover {
+          box-shadow: 0px 0px 6px #e1306c;
+        }
+      }
+
+      .you {
+        background-color: #ff0000;
+
+        i {
+          margin-left: rem(-5px);
+        }
+
+        &:hover {
+          box-shadow: 0px 0px 6px #ff0000;
+        }
+      }
+    }
+  }
+}
