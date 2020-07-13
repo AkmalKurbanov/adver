@@ -7,10 +7,11 @@
   transition: $tr;
   transition-delay: .1s;
   background-color: $wc;
+
   ul {
     li {
       border-bottom: 1px solid #CFCFCF;
-    
+
 
       &:last-child {
         border-bottom: none;
@@ -25,6 +26,16 @@
         background-color: $wc;
         font-size: rem(15px);
         color: $bc;
+
+        @include sm {
+          width: rem(50px);
+          height: rem(50px);
+        }
+
+        @include xs {
+          width: rem(40px);
+          height: rem(40px);
+        }
 
         &:hover {
           color: $mc;

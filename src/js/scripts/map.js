@@ -6,7 +6,7 @@ DG.then(function () {
     zoom: 17
   });
   var myIcon = L.icon({
-    iconUrl: '../assets/img/mark.svg',
+    iconUrl: 'assets/img/mark.svg',
     iconSize: [70, 70],
   });
   DG.marker([42.837492, 74.597990], {

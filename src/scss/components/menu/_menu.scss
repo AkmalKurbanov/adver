@@ -384,3 +384,11 @@
     height: rem(400px);
   }
 }
+
+.mmenu-nav {
+  display: none;
+}
+
+.mm-menu_offcanvas.mm-menu_opened {
+  display: block;
+}

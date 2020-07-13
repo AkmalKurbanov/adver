@@ -11,7 +11,7 @@
   right: -200%;
   transition: $tr;
   box-sizing: border-box;
-
+  
   @include xs {
     padding: rem(15px);
   }
@@ -27,6 +27,11 @@
     cursor: pointer;
     transition: $tr;
     z-index: 1;
+
+    @include xs {
+      top: rem(15px);
+      right: rem(10px);
+    }
 
     &:hover {
       color: $mc;
@@ -210,9 +215,9 @@
       left: 0;
 
       .leaflet-top.leaflet-right {
-        top: rem(70px);
-        left: rem(10px);
-        right: auto;
+        top: rem(70px) !important;
+        left: rem(10px) !important;
+        right: auto !important;
       }
     }
   }

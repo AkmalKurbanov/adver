@@ -515,6 +515,10 @@ button {
   text-transform: uppercase;
   font-size: rem(13px);
 
+  @include xs {
+    font-size: rem(11px);
+  }
+
   &:hover {
     color: $mc;
   }

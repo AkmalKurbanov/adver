@@ -41,7 +41,7 @@ $(document).mouseup(function (e) {
 
 var $menu = $('.mmenu-nav').mmenu({
   "navbar": {
-    "title": '<span>"Adver Group"</span> Рекламный холдинг'
+    "title": '<span>"Adver Group"</span>'
   },
   "extensions": [
     "pagedim-black",

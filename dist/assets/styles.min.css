@@ -4383,6 +4383,12 @@ button,input {
   font-size: .8125rem;
 }
 
+@media (max-width:575.98px) {
+  .more {
+    font-size: .6875rem;
+  }
+}
+
 .more:hover {
   color: #2b7de0;
 }
@@ -5411,6 +5417,14 @@ button,input {
   }
 }
 
+.mmenu-nav {
+  display: none;
+}
+
+.mm-menu_offcanvas.mm-menu_opened {
+  display: block;
+}
+
 .hamburger,.hamburger-mobile {
   width: 1rem;
   padding: 1.25rem;
@@ -5602,6 +5616,20 @@ button,input {
   color: #000;
 }
 
+@media (max-width:767.98px) {
+  .float-auxiliary-panel ul li a {
+    width: 3.125rem;
+    height: 3.125rem;
+  }
+}
+
+@media (max-width:575.98px) {
+  .float-auxiliary-panel ul li a {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
 .float-auxiliary-panel ul li a:hover {
   color: #2b7de0;
 }
@@ -5643,6 +5671,13 @@ button,input {
   -o-transition: all .3s;
   transition: all .3s;
   z-index: 1;
+}
+
+@media (max-width:575.98px) {
+  .sliding-panel__close {
+    top: .9375rem;
+    right: .625rem;
+  }
 }
 
 .sliding-panel__close:hover {
