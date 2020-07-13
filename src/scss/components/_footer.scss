@@ -1,3 +1,228 @@
 .footer {
-  flex: 0 0 auto;
+  background-color: #2f3338;
+  padding: rem(50px) 0 rem(10px);
+
+  @include xs {
+    padding-top: rem(30px);
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    width: 100%;
+
+    @include sm {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__logo {
+    max-width: rem(200px);
+    width: 100%;
+  }
+
+  &__col {
+    flex-basis: 30%;
+    width: 100%;
+    box-sizing: border-box;
+
+    @include sm {
+      flex-basis: 50%;
+      padding-right: rem(10px);
+    }
+
+    &:first-child {
+
+      @include lg {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      padding-right: 0;
+
+      @include sm {
+        flex-basis: 100%;
+        margin-top: rem(30px);
+      }
+    }
+  }
+
+  .footer-contacts {
+    &__item {
+      padding-left: rem(40px);
+    }
+
+    &__items {
+      color: $wc;
+      position: relative;
+      margin-bottom: rem(30px);
+
+      a {
+        color: $wc;
+        padding-left: 20%;
+        padding-left: rem(40px);
+      }
+
+
+      i {
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+
+  .nav {
+    a {
+      color: $wc;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: rem(30px);
+      display: block;
+
+      @include xs {
+        margin-bottom: rem(21px);
+      }
+
+      &:hover {
+        color: #999999;
+      }
+    }
+
+    ul {
+      li {
+        margin-bottom: rem(10px);
+
+        &:last-child {
+          margin: 0;
+        }
+
+        a {
+          color: #999999;
+          font-size: rem(14px);
+          text-transform: none;
+          font-weight: 400;
+          margin: 0;
+
+          @include md {
+            font-size: rem(15px);
+          }
+
+          @include sm {
+            font-size: rem(14px);
+          }
+
+          @include xs {
+            font-size: rem(13px);
+            font-weight: 300;
+          }
+
+          &:hover {
+            color: $wc;
+          }
+        }
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: #999999;
+      transform: translateY(-50%);
+      top: 50%;
+
+      @include xs {
+        display: none;
+      }
+    }
+
+    ul {
+      position: relative;
+      padding: 0 rem(40px);
+      overflow: hidden;
+      background-color: #2f3338;
+      z-index: 1;
+
+      @include xs {
+        padding: 0;
+      }
+
+      li {
+        display: inline-block;
+        margin-right: rem(7px);
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: rem(40px);
+          height: rem(40px);
+          border-radius: rem(3px);
+          border: rem(1px) solid #999;
+          color: #999999;
+
+          &:hover {
+            opacity: 0.5;
+          }
+
+          .icon-vk {
+            margin-right: rem(6px);
+            margin-top: rem(2px);
+          }
+        }
+      }
+    }
+  }
+
+  &__copy {
+    margin-top: rem(10px);
+
+    p {
+      text-align: center;
+      color: #999999;
+    }
+  }
+
+  .btn {
+    margin-bottom: rem(20px);
+  }
+
+  .callback,
+  .dropdown__mail {
+    &:after {
+      display: none;
+    }
+  }
+
+  .dropdown-wrap {
+    @include sm {
+
+      display: inline-block !important;
+      padding-right: rem(50px);
+
+      a {
+        display: inline-block !important;
+      }
+    }
+
+  }
+
+  .dropdown {
+    z-index: 9 !important;
+    left: 0;
+  }
 }

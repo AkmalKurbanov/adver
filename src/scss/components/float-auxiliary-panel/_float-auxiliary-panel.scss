@@ -3,13 +3,17 @@
   right: 0;
   top: rem(225px);
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .1);
-  z-index: 2;
+  z-index: 10;
+  transition: $tr;
+  transition-delay: .1s;
+  background-color: $wc;
   ul {
     li {
       border-bottom: 1px solid #CFCFCF;
+    
 
       &:last-child {
-        border: none;
+        border-bottom: none;
       }
 
       a {
@@ -23,8 +27,9 @@
         color: $bc;
 
         &:hover {
-          color: #CF3C3A;
+          color: $mc;
         }
+
       }
     }
   }

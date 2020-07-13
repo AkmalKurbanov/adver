@@ -38,12 +38,12 @@ mixin list(data)
           .menu__nav-item
             nav.nav
 
-              - var data = { "items": [{"title": "УСЛУГИ", "sublevel": true, "items":[{"title": "Разработка сайтов","sublevel": true,"items":[{"title": "Дизайн сайтов"},{"title": "Верстка сайтов"},{"title": "Програмирование"},{"title": "Мобильные приложения"},{"title": "Разработка логотипов"},{"title": "SEO & SMM"}]},{"title": "Полиграфия"},{"title": "Дизайн"},{"title": "Продакнш"},{"title": "Медиа размещения"},{"title": "Наружная реклама"},{"title": "Издательство"},{"title": "Event"}]}, {"title": "КОМПАНИЯ", "sublevel": true, "items":[{"title": "О компании"},{"title": "Команда"},{"title": "Партнеры"},{"title": "Производство"},{"title": "Отзывы"},{"title": "Документы"},{"title": "Реквизиты"},{"title": "Вакансии"},{"title": "Вопрос ответ"}]},{"title": "НАШИ РАБОТЫ"},{"title": "КОНТАКТЫ"}]}
+              - var data = { "items": [{"title": "УСЛУГИ", "sublevel": true, "items":[{"title": "Разработка сайтов","sublevel": true,"items":[{"title": "Дизайн сайтов"},{"title": "Верстка сайтов"},{"title": "Програмирование"},{"title": "Мобильные приложения"},{"title": "Разработка логотипов"},{"title": "SEO & SMM"}]},{"title": "Полиграфия"},{"title": "Дизайн"},{"title": "Продакнш"},{"title": "Медиа размещения"},{"title": "Наружная реклама"},{"title": "Издательство"},{"title": "Event"}]}, {"title": "КОМПАНИЯ", "sublevel": true, "items":[{"title": "О компании"},{"title": "Команда"},{"title": "Партнеры"},{"title": "Производство"},{"title": "Отзывы"},{"title": "Документы"},{"title": "Реквизиты"},{"title": "Вакансии"},{"title": "Вопрос ответ"}]},{"title": "НАШИ РАБОТЫ", "sublevel": true,"items":[{"title": "Все"},{"title": "Полиграфия"},{"title": "Графический дизайн "},{"title": "Наружная реклама"},{"title": "Дизайн интерьера"},{"title": "Продакшн"},{"title": "Web разработка"}]}]}
               +list(data)
 
       .secondary-col
         .btn-wrap
-          .btn ЗАДАТЬ ВОПРОС
+          .btn.ask-js ЗАДАТЬ ВОПРОС
         .menu__contacts.menu-contacts
           .menu-contacts__items
             a(href="#" class="menu-contacts__item") 
@@ -63,7 +63,7 @@ mixin list(data)
                         span.dropdown-wrap__title=title
                   +phone('755 21 7777','Отдел продаж')
                   +phone('755 21 7776','Бухгалтерия')
-            a(href="#" class="dropdown-wrap__title") Заказать звонок
+            a(href="#" class="dropdown-wrap__title callback-js") Заказать звонок
 
           .menu-contacts__items
             .dropdown-wrap

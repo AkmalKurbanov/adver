@@ -1,10 +1,9 @@
 .float-auxiliary-panel 
   ul
-    mixin float-auxiliary-panel(link,item)
+    mixin float-auxiliary-panel(id,item,trigger)
       li 
-        a(href=link)
+        a(href=id class=trigger)
           i(class=item)
-    +float-auxiliary-panel('#','icon-phone')    
-    +float-auxiliary-panel('#','icon-envelope')    
-    +float-auxiliary-panel('#','icon-chat')    
-    +float-auxiliary-panel('#','icon-mark')    
+    +float-auxiliary-panel('#','icon-phone', 'callback-js')    
+    +float-auxiliary-panel('#','icon-envelope', 'ask-js')    
+    +float-auxiliary-panel('#','icon-mark','location-js')    

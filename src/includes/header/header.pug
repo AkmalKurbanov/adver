@@ -1,47 +1,236 @@
-header.header.header_flush
-  .header__wrap
-    .header__col
-      .hamburger
-        i
-        i
-        i
-      .header__logo
-        a(href="#")
-          img(src="/assets/img/logo.svg", alt="")
-      nav.header__mnu.nav
-        include ../../includes/nav/nav
-    .header__col
-      .header__control
-        a(href="#") г.Бишкек
-      .header__control
-        .header__control-dropdown.dropdown-wrap
-          a(href="#" class="callback") 755 21 7779 
-          .dropdown
-            .dropdown__wrap
-              mixin phone(phone, title)
-                .dropdown__item
-                  a(href="#" class="dropdown__phone")=phone 
-                    span.dropdown-wrap__title=title
-              +phone('755 21 7777','Отдел продаж')
-              +phone('755 21 7776','Бухгалтерия')
-        a(href="#" class="dropdown-wrap__title") Заказать звонок
+.mmenu-nav
+  ul
+    li
+      a(href="#") ГЛАВНАЯ
+    li
+      a(href="#") КОМПАНИЯ
+      ul
+        li
+          a(href="#") О компании
+        li
+          a(href="#") Команда
+        li
+          a(href="#") Партнеры
+        li
+          a(href="#") Производство
+        li
+          a(href="#") Отзывы
+        li
+          a(href="#") Документы
+        li
+          a(href="#") Реквизиты
+        li
+          a(href="#") Вакансии
+        li
+          a(href="#") Вопрос ответ
+    li
+      a(href="#") УСЛУГИ
+      ul
+        li
+          a(href="#") Разработка сайтов
+        li
+          a(href="#") Наружная реклама
+          ul
+            li
+              a(href="#") Биллборды
+            li
+              a(href="#") Мегаборды
+            li
+              a(href="#") Реклама на транспорте
+            li
+              a(href="#") Реклама на остановках
+            li
+              a(href="#") Обьемные буквы
+            li
+              a(href="#") Дислокация
+        li
+          a(href="#") Полиграфия
+        li
+          a(href="#") Дизайн
+        li
+          a(href="#") Продакнш
+        li
+          a(href="#") Медиа размещения
+        li
+          a(href="#") Разработка сайтов
+          ul
+            li
+              a(href="#") Дизайн сайтов
+            li
+              a(href="#") Верстка сайтов
+            li
+              a(href="#") Програмирование
+            li
+              a(href="#") Мобильные приложения
+            li
+              a(href="#") Разработка логотипов
+            li
+              a(href="#") SEO & SMM
+        li
+          a(href="#") Издательство
+        li
+          a(href="#") Event
+    li
+      a(href="#") НАШИ РАБОТЫ
+      ul
+        li
+          a(href="#") Все
+        li
+          a(href="#") Полиграфия
+        li
+          a(href="#") Графический дизайн 
+        li
+          a(href="#") Наружная реклама
+        li
+          a(href="#") Дизайн интерьера
+        li
+          a(href="#") Продакшн
+        li
+          a(href="#") Web разработка
+        
+    li
+      a(href="#") КОНТАКТЫ
 
-      .header__control
-        .header__control-dropdown.dropdown-wrap
-          a(href="#" class="dropdown__mail") office@adver.kg
-          .dropdown
-            .dropdown__wrap
-              mixin mail(mail, title)
-                .dropdown__item
-                  a(href="" class="dropdown__mail" data-mail=mail)=mail 
-                    span.dropdown-wrap__title=title
-              +mail('office@adver.kg','Отдел продаж')
-              +mail('office@adver.kg','Бухгалтерия')      
-        a(href="#" class="dropdown-wrap__title") НАПИСАТЬ СООБЩЕНИЕ
-              
-      .header__control
-        .search-trigger
-          i.icon-search
+- var headerFlush
+  if headerFlush
+    header.header.header_flush
+      .header__wrap
+        .header__col
+          .hamburger
+            i
+            i
+            i
+          .hamburger-mobile
+            i
+            i
+            i
+          .header__logo
+            a(href="#")
+              img(src="/assets/img/logo.svg", alt="")
+          nav.header__mnu.nav
+            include ../../includes/nav/nav
+        .header__col
+          .header__mobile-control
+            ul
+              mixin mobile-control(icon, trigger)
+                li
+                  span(class=trigger)
+                    i(class=icon)
+              +mobile-control('icon-phone', 'phone-mobile-js')    
+              +mobile-control('icon-envelope','email-mobile-js')    
+              +mobile-control('icon-search','search-trigger')    
+          .header__control
+            .header__control-dropdown.dropdown-wrap
+              a(href="#" class="callback") 755 21 7779 
+              .dropdown
+                .dropdown__wrap
+                  mixin phone(phone, title)
+                    .dropdown__item
+                      a(href="#" class="dropdown__phone")=phone 
+                        span.dropdown-wrap__title=title
+                  +phone('755 21 7777','Отдел продаж')
+                  +phone('755 21 7776','Бухгалтерия')
+            a(href="#" class="dropdown-wrap__title callback-js") Заказать звонок
 
+          .header__control
+            .header__control-dropdown.dropdown-wrap
+              a(href="#" class="dropdown__mail") office@adver.kg
+              .dropdown
+                .dropdown__wrap
+                  mixin mail(mail, title)
+                    .dropdown__item
+                      a(href="" class="dropdown__mail" data-mail=mail)=mail 
+                        span.dropdown-wrap__title=title
+                  +mail('office@adver.kg','Отдел продаж')
+                  +mail('office@adver.kg','Бухгалтерия')      
+            a(href="#" class="dropdown-wrap__title ask-js") НАПИСАТЬ СООБЩЕНИЕ
+                  
+          .header__control
+            .search-trigger
+              i.icon-search
+  else
+    header.header
+      .header__wrap
+        .header__col
+          .hamburger
+            i
+            i
+            i
+          .hamburger-mobile
+            i
+            i
+            i
+            
+       
+          .header__logo
+            a(href="#")
+              img(src="/assets/img/logo.svg", alt="")
+          nav.header__mnu.nav
+            include ../../includes/nav/nav
+        .header__col
+          .header__mobile-control
+            ul
+              mixin mobile-control(icon, trigger)
+                li
+                  span(class=trigger)
+                    i(class=icon)
+              +mobile-control('icon-phone', 'phone-mobile-js')    
+              +mobile-control('icon-envelope','email-mobile-js')    
+              +mobile-control('icon-search','search-trigger') 
+          .header__control
+            a(href="#") г.Бишкек
+          .header__control
+            .header__control-dropdown.dropdown-wrap
+              a(href="#" class="callback") 755 21 7779 
+              .dropdown
+                .dropdown__wrap
+                  mixin phone(phone, title)
+                    .dropdown__item
+                      a(href="#" class="dropdown__phone")=phone 
+                        span.dropdown-wrap__title=title
+                  +phone('755 21 7777','Отдел продаж')
+                  +phone('755 21 7776','Бухгалтерия')
+            a(href="#" class="dropdown-wrap__title callback-js") Заказать звонок
+
+          .header__control
+            .header__control-dropdown.dropdown-wrap
+              a(href="#" class="dropdown__mail") office@adver.kg
+              .dropdown
+                .dropdown__wrap
+                  mixin mail(mail, title)
+                    .dropdown__item
+                      a(href="" class="dropdown__mail" data-mail=mail)=mail 
+                        span.dropdown-wrap__title=title
+                  +mail('office@adver.kg','Отдел продаж')
+                  +mail('office@adver.kg','Бухгалтерия')      
+            a(href="#" class="dropdown-wrap__title ask-js") НАПИСАТЬ СООБЩЕНИЕ
+                  
+          .header__control
+            .search-trigger
+              i.icon-search
+.mobile-menu.mobile-menu-phone-js
+  ul
+    mixin mobile-menu-item(item, title, modificator)
+      li
+        a(href="#" class=modificator)=item
+          span=title
+    li 
+      h2 Телефон      
+      span.mobile-menu-close-js
+        i.icon-close
+    +mobile-menu-item('755 21 7777','Отдел продаж','dropdown__phone')
+    +mobile-menu-item('755 21 7776','Бухгалтерия','dropdown__phone')    
+    li
+      a(href="#" class="callback-js") Заказать звонок
+.mobile-menu.mobile-menu-email-js
+  ul
+    li 
+      h2 E-mail
+      span.mobile-menu-close-js
+        i.icon-close
+    +mobile-menu-item('office@adver.kg','Отдел продаж','dropdown__mail')
+    +mobile-menu-item('office@adver.kg','Бухгалтерия','dropdown__mail')
+    li    
+      a(href="#" class="ask-js") НАПИСАТЬ СООБЩЕНИЕ    
 include ../../includes/menu/menu
 include ../../includes/float-auxiliary-panel/float-auxiliary-panel

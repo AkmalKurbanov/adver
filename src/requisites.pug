@@ -1,0 +1,55 @@
+extends layout/main/main
+block title
+  | requisites
+block main
+  .wrapper
+    .content
+      - var headerFlush = false
+        include includes/header/header
+        .requisites.layout
+          .container
+            include includes/breadcrumbs/breadcrumbs
+            +breadcrumbs(['главная', 'О компании'],'Реквизиты')
+            .title-wrap
+              .title Реквизиты
+
+            .cols-wrap
+              .secondary-col
+                include includes/sidebar/sidebar
+              .main-col
+                .text.text-detail
+                  p Ниже приведены реквизиты компании, в случае необходимости получения дополнительных документов: свидетельства о государственной регистрации, идентификационного номера налогоплательщика вы можете обратиться в бухгалтерию предприятия.
+                .requisites__list
+                  mixin requisites(item)
+                    .requisites__item=item
+                  +requisites('Полное наименование: Общество с ограниченной ответственностью «Adver Group»')
+                  +requisites('Сокращенное наименование: ОсОО «Adver Group»')
+                  +requisites('ИНН: 01209201110106')
+                  +requisites('ОГРН: 0000000000000000000000')
+                  +requisites('Юридический адрес: Кыргызская Республика,г.Бишкек,ул.Малдыбаева, 73.')
+                  +requisites('Фактический адрес: Кыргызская Республика,г.Бишкек,ул.Малдыбаева, 73.')
+                  .requisites__item
+                    | Телефон:
+                    a(href="tel:+996755217777") +996 755 21 7777
+                  .requisites__item
+                    | Электронная почта:
+                    a(href="mailto:office@adver.kg") office@adver.kg
+                  .requisites__item
+                    | Сайт:
+                    a(href="https://adver.kg/") https://adver.kg/
+                  +requisites('Банковские реквизиты: БИК: 00000000 Р/с:00000000000000 ОАО “Банк” Кор/счет: 000000000000000')
+
+
+
+     
+
+    include includes/footer/footer
+
+  include includes/callback/callback
+  include includes/question/question
+  include includes/map/map
+
+  include includes/scripts 
+
+
+  

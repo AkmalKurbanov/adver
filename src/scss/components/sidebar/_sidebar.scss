@@ -1,0 +1,42 @@
+.sidebar {
+  width: 100%;
+
+
+  &__list {
+    border: rem(1px) solid #F0F0F0;
+    margin-bottom: rem(60px);
+  }
+
+  &__item {
+    border-bottom: rem(1px) solid #F0F0F0;
+
+    &:last-child {
+      border: none;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      padding: rem(20px) rem(18px);
+      color: $bc;
+
+      &:hover {
+        background-color: #f8f9fb;
+      }
+
+      i {
+        margin-right: rem(15px);
+        color: $mc;
+      }
+    }
+
+    &_active {
+      background-color: #f8f9fb;
+
+      a {
+        font-weight: 500;
+      }
+    }
+  }
+
+}

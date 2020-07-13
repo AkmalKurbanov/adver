@@ -1,0 +1,56 @@
+extends layout/main/main
+block title
+  | works
+block main
+  .wrapper
+    .content
+      - var headerFlush = false
+        include includes/header/header
+        .works.layout
+          .container
+            include includes/breadcrumbs/breadcrumbs
+            +breadcrumbs(['главная'],'Наши работы')
+            .title-wrap
+              .title Наши работы
+            .text
+              p Насколько эффективна наша работа наглядно продемонстрирует портфолио. Ознакомьтесь с проектами, которые выполняла команда Эдвер Групп. За годы практики мы хорошо изучили рынок, в штат входят эксперты разной специализации, поэтому мы успешно работаем в любой сфере.
+              p В каталоге представлен не полный список проектов. Если вы не нашли интересующий вас пример, или хотите получить комментарии по имеющимся работам, свяжитесь с наши. Оператор предоставит любую интересующую Вас информацию. Получите прибыль и популярность, как и все наши клиенты, доверяя нам рекламу бизнеса!
+
+            .works__filter
+              .filter
+                form
+                  span Сортировать по:
+                  .select
+                    input(type="hidden" class="select-item" name="select-category" value="Аймактар")
+                    .select_checked Все
+                    ul.select__dropdown
+                      each val in ['Все1', 'Все2', 'Все3']
+                        li.select__option(data-value=val)=val
+              .our-work__wrap
+                mixin work(img, title, subtitle)
+                  .our-work__item
+                    a(href="#")
+                      img(src=img, alt="")
+                      .our-work__desc
+                        .our-work__title=title
+                        .our-work__sub-title=subtitle
+                +work('./assets/img/work1.jpg','title', 'sub-title')
+                +work('./assets/img/work1.jpg','title', 'sub-title')
+                +work('./assets/img/work1.jpg','title', 'sub-title')
+                +work('./assets/img/work1.jpg','title', 'sub-title')
+                +work('./assets/img/work1.jpg','title', 'sub-title')
+                +work('./assets/img/work1.jpg','title', 'sub-title')
+
+          
+
+
+     
+
+    include includes/footer/footer
+
+  include includes/search/search
+  include includes/callback/callback
+  include includes/question/question
+  include includes/map/map
+
+  include includes/scripts 

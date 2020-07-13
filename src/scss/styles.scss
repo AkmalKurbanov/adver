@@ -9,6 +9,7 @@
 @import "../../node_modules/normalize.css/normalize.css";
 @import "../../node_modules/swiper/css/swiper.min.css";
 @import "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css";
+@import "../../node_modules/mmenu-js/dist/mmenu.css";
 //---------------------------------------------
 
 // подключение сгенерированных иконок(fontello),
@@ -36,8 +37,21 @@
 @import "components/base";
 @import "components/header";
 @import "components/menu/menu";
+@import "components/hamburger/hamburger";
 @import "components/social/social";
 @import "components/float-auxiliary-panel/float-auxiliary-panel";
 @import "components/sliding-panel/sliding-panel";
 @import "components/main-screen/main-screen";
+@import "components/sidebar/sidebar";
+@import "components/agree/agree";
+@import "components/about/about";
+@import "components/services/services";
+@import "components/text-part/text-part";
+@import "components/advantages/advantages";
+@import "components/our-work/our-work";
+@import "components/partners/partners";
+@import "components/requisites/requisites";
+@import "components/tabs/tabs";
+@import "components/accordion/accordion";
+@import "components/social-media/social-media";
 @import "components/footer";

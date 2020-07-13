@@ -1,0 +1,13 @@
+.agree {
+  &__text {
+    p {
+      font-size: rem(15px);
+      color: #C4C4C4;
+      margin-bottom: rem(20px);
+      line-height: rem(19px);
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+}

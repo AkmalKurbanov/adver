@@ -97,6 +97,7 @@ gulp.task('js', function () {
          'node_modules/swiper/js/swiper.min.js',
          'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
          'node_modules/inputmask/dist/jquery.inputmask.min.js',
+         'node_modules/mmenu-js/dist/mmenu.js',
          'src/js/scripts/*.js'
       ])
       .pipe(sourcemaps.init())
@@ -195,4 +196,4 @@ gulp.task('watch', function () {
 
 gulp.task('build', gulp.series('clean', 'scss', 'html', 'js', 'images', 'fonts', 'webpStyle', 'assets', 'purify'));
 
-gulp.task('default', gulp.parallel('watch', 'scss', 'browser-sync', 'html', 'js', 'assets'));
+gulp.task('default', gulp.parallel('watch', 'scss', 'browser-sync', 'html', 'js', 'assets', 'images'));

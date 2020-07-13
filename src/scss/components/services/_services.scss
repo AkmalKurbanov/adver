@@ -1,0 +1,108 @@
+.services {
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    justify-content: space-between;
+    border-top: rem(1px) solid #C4C4C4;
+    padding: rem(35px) 0;
+
+    @include sm {
+      flex-direction: column;
+    }
+
+    &:last-child {
+      border-bottom: rem(1px) solid #C4C4C4;
+
+      @include sm {
+        border: none;
+        padding: 0;
+      }
+    }
+
+    .text {
+
+      ol,
+      ul,
+      ap {
+        font-size: rem(15px);
+      }
+    }
+  }
+
+
+  &__list {
+    position: relative;
+    margin-top: rem(40px);
+  }
+
+  &__col {
+    flex-basis: 48.7%;
+    position: relative;
+    width: 100%;
+
+    @include md {
+      flex-basis: 58%;
+    }
+
+    &:last-child {
+      flex-basis: 48.7%;
+
+      @include md {
+        flex-basis: 40%;
+      }
+
+      @include sm {
+        margin-top: rem(25px);
+        flex-basis: 100%
+      }
+    }
+
+    .title {
+      font-size: rem(20px);
+      color: $bc;
+      margin-top: rem(18px);
+      margin-bottom: rem(15px);
+      padding-right: rem(45px);
+    }
+
+    p {
+      @include md {
+        font-size: rem(15px);
+      }
+    }
+  }
+
+
+  &__link {
+    border: rem(1px) solid #C4C4C4;
+    border-radius: rem(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(180deg);
+    width: rem(36px);
+    height: rem(36px);
+    font-size: rem(10px);
+    color: #C4C4C4;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: $tr;
+    overflow: hidden;
+    z-index: 9;
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:hover {
+      background-color: $mc;
+      color: $wc;
+      border-color: $mc;
+    }
+  }
+}

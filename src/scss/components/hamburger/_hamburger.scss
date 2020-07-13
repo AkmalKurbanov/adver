@@ -1,0 +1,58 @@
+.hamburger,
+.hamburger-mobile {
+  width: rem(16px);
+  padding: rem(20px);
+  cursor: pointer;
+
+  @include xs {
+    padding: rem(10px);
+    padding-left: 0;
+  }
+
+  &:hover {
+    i {
+      background-color: $mc;
+
+      &:nth-child(2) {
+        width: rem(11px);
+      }
+
+      &:last-child {
+        width: 100%;
+      }
+    }
+  }
+
+  i {
+    height: 2px;
+    width: 100%;
+    background-color: $bc;
+    transition: $tr;
+    display: block;
+    margin-bottom: rem(3px);
+
+
+    &:last-child {
+      width: rem(11px);
+      margin-bottom: 0;
+    }
+  }
+}
+
+.hamburger {
+  @include sm {
+    display: none;
+  }
+
+  @include xs {
+    padding: rem(10px);
+  }
+}
+
+.hamburger-mobile {
+  display: none;
+
+  @include sm {
+    display: block !important;
+  }
+}

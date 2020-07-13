@@ -4,6 +4,7 @@ block title
 block main
   .wrapper
     .content
+      - var headerFlush = true
       include includes/header/header
       .main-screen
         .hero-slider
@@ -15,18 +16,212 @@ block main
                     .hero-slider__content
                       h2.hero-slider__title#title Рекламный холдинг полного цикла
               +hero-slider('/assets/img/hero-slider.jpg','bright')
-              .swiper-slide(class=brightness style="background-image: url("+item+")")
+              .swiper-slide
                 .wrapper_video
                   video(autobuffer='', playsinline='', webkit-playsinline='', autoplay='', loop='', muted='', style='height: 100%; width:100%;`')
                     source(src='https://priority.aspro-demo.ru/upload/iblock/b50/b5013a7ac69ec9ae616ba16f919d9ace.mp4', type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
             .swiper-pagination
+        .services
+          .services__slider
+            .swiper-container.services-slider-js
+              .swiper-wrapper
+                mixin services-slider(title, url, link)
+                  .swiper-slide
+                    a(href=link style="background-image: url("+url+")")
+                      span=title
+                +services-slider('Наружная реклама','./assets/img/service1.jpg','#')
+                +services-slider('Полиграфия','./assets/img/service2.jpg','#')
+                +services-slider('РАзработка сайтов','./assets/img/service3.jpg','#')
+                +services-slider('Наружная реклама','./assets/img/service4.jpg','#')
+      div.text-part-wrap
+        .text-part
+          .container
+            .text-part__wrap.text-part__wrap_right
+              .text-part__col
+                .text-part__img
+                  img(src='./assets/img/text1.jpg', alt='')
+              .text-part__col
+                .text
+                  p
+                    b Adver Group
+                    |  – компания с широкими возможностями: от разработки дизайна визитки до медиа
+                    |     размещения.
+                  p
+                    | Специалисты Adver Group устранят все препятствия на пути к вашей цели и помогут достичь победы! Мы
+                    | добиваемся
+                    | успеха благодаря:
+                  ul.with-dotted
+                    li
+                      | Тщательному анализу рынка;
+                    li
+                      | Поиску выгодных отличительных особенностей вашей компании, составлению
+                      | уникального торгового предложения;
+                    li
+                      | Созданию объективного портрета целевой аудитории, на основе которого будет сделан выбор способа рекламы товара или услуги;
+                    li
+                      | Продуктивному и ненавязчивому мотивированию аудитории на совершение
+                      | целевого действия.
+        .text-part
+          .container
+            .text-part__wrap
+              .text-part__col
+                .text-part__img
+                  img(src='./assets/img/text2.jpg', alt='')
+              .text-part__col
+                .text
+                  p
+                    b Adver Group
+                    |  – компания с широкими возможностями: от разработки дизайна визитки до медиа
+                    |     размещения.
+                  p
+                    | Специалисты Adver Group устранят все препятствия на пути к вашей цели и помогут достичь победы! Мы
+                    | добиваемся
+                    | успеха благодаря:
+                  ul.with-dotted
+                    li
+                      | Тщательному анализу рынка;
+                    li
+                      | Поиску выгодных отличительных особенностей вашей компании, составлению
+                      | уникального торгового предложения;
+                    li
+                      | Созданию объективного портрета целевой аудитории, на основе которого будет сделан выбор способа рекламы товара или услуги;
+                    li
+                      | Продуктивному и ненавязчивому мотивированию аудитории на совершение
+                      | целевого действия.      
+        
+        .text-part
+          .container
+            .text-part__wrap.text-part__wrap_right
+              .text-part__col
+                .text-part__img
+                  img(src='./assets/img/text3.jpg', alt='')
+              .text-part__col
+                .text
+                  p
+                    b Adver Group
+                    |  – компания с широкими возможностями: от разработки дизайна визитки до медиа
+                    |     размещения.
+                  p
+                    | Специалисты Adver Group устранят все препятствия на пути к вашей цели и помогут достичь победы! Мы
+                    | добиваемся
+                    | успеха благодаря:
+                  ul.with-dotted
+                    li
+                      | Тщательному анализу рынка;
+                    li
+                      | Поиску выгодных отличительных особенностей вашей компании, составлению
+                      | уникального торгового предложения;
+                    li
+                      | Созданию объективного портрета целевой аудитории, на основе которого будет сделан выбор способа рекламы товара или услуги;
+                    li
+                      | Продуктивному и ненавязчивому мотивированию аудитории на совершение
+                      | целевого действия.  
+
+      .our-work.layout
+        .container
+          .title-wrap
+              .title Наши работы
+          .our-work__wrap
+            mixin work(img, title, subtitle)
+              .our-work__item
+                a(href="#")
+                  img(src=img, alt="")
+                  .our-work__desc
+                    .our-work__title=title
+                    .our-work__sub-title=subtitle
+            +work('./assets/img/work1.jpg','title', 'sub-title')
+            +work('./assets/img/work1.jpg','title', 'sub-title')
+            +work('./assets/img/work1.jpg','title', 'sub-title')
+            +work('./assets/img/work1.jpg','title', 'sub-title')
+            +work('./assets/img/work1.jpg','title', 'sub-title')
+            +work('./assets/img/work1.jpg','title', 'sub-title')
+
+
+      .partners
+        .container
+          .title-wrap
+              .title Наши партнеры  
+                a(href="#").partners__more.more ВСЕ ПАРТНЕРЫ
+          .swiper-container.partners-js.partners__slider
+            .swiper-wrapper
+              mixin partners(item)
+                .swiper-slide
+                  img(src=item, alt="")
+              +partners('./assets/img/partners1.svg')   
+              +partners('./assets/img/partners2.svg')   
+              +partners('./assets/img/partners3.svg')   
+              +partners('./assets/img/partners4.svg')   
+
+      .social-media.layout
+        .container
+          .title-wrap
+              .title Мы в Instagram
+                a(href="#").social-media.more ВСЕ ПУБЛИКАЦИИ
+          .swiper-container.social-media-js.social-media__slider
+            .swiper-wrapper
+              mixin social(item)
+                .swiper-slide
+                  img(src=item, alt="")
+                  a(href="#").social-media__desc
+                    span.social-media__date 24 мая
+                    | advergroup_kg Айт маарек болсун! #айт #кыргызстан #адвер #жарнама #реклама #рекламнаякомпаниябишкек #бишкек #каракол #ош #объемнаяреклама #рекламавинстаграм #рекламавинтернете #наружнаярекламабишкек #наружнаяреклама #типографиябишкек #типография #интернетмаркетинг
+              +social('./assets/img/social1.jpg')   
+              +social('./assets/img/social4.jpg')   
+              +social('./assets/img/social2.jpg')   
+              +social('./assets/img/social3.jpg')   
+        
+              
+          
+
 
      
 
     include includes/footer/footer
 
+  include includes/search/search
   include includes/callback/callback
   include includes/question/question
-  include includes/review/review
+  include includes/map/map
 
   include includes/scripts 
+  script. 
+  
+
+    var words = document.getElementById("title");
+    var transfer = words.innerHTML;
+    var letters = transfer.slice(0, words.length);
+
+
+    var type = typeWriter();
+    var go = author();
+
+
+    go();
+
+
+    function author() {
+    count = 0;
+    return function () {
+    if (count >= letters.length) {
+    return
+    } else {
+    type();
+    count += 1;
+    setTimeout(function () {
+    go();
+    }, (Math.random() * 100))
+    }
+    }
+    }
+
+    function typeWriter() {
+    var i = 0;
+    words.innerHTML = "";
+    return function () {
+    if (i >= letters.length) {
+    return
+    };
+    i += 1;
+    words.innerHTML += letters.slice(i - 1, i);
+    }
+    }

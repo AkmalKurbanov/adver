@@ -21,11 +21,63 @@ img {
   max-width: 100%;
 }
 
+picture {
+  line-height: 0;
+}
+
+// ul 
 ul {
   li {
     list-style: none;
   }
 }
+
+.with-dots {
+  li {
+    position: relative;
+    padding-left: rem(20px);
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: rem(8px);
+      height: rem(8px);
+      border-radius: 100%;
+      background-color: $mc;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%)
+    }
+  }
+}
+
+.with-dotted {
+  li {
+    position: relative;
+    padding-left: rem(20px);
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: rem(11px);
+      height: rem(1px);
+      background-color: $mc;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%)
+    }
+  }
+}
+
+// ul end
 
 input,
 button {
@@ -84,7 +136,7 @@ button {
 
 //  
 .btn {
-  background-color: #2B7DE0;
+  background-color: $mc;
   border-radius: rem(3px);
   text-transform: uppercase;
   font-size: rem(14px);
@@ -99,8 +151,502 @@ button {
   width: 100%;
 
   &:hover {
-    background-color: rgba(#2B7DE0, 0.8);
+    background-color: rgba($mc, 0.8);
   }
 }
 
 // btn end
+
+
+.overlay-dark {
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 7;
+}
+
+
+// search 
+.search-panel {
+  background-color: $wc;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transition: $tr;
+  top: -100%;
+
+  &__wrap,
+  &__btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    max-width: 13%;
+    width: 100%;
+
+    @include lg {
+      max-width: 15%;
+    }
+
+    @include md {
+      max-width: 20%;
+    }
+
+    @include sm {
+      max-width: 27%;
+    }
+
+    .btn {
+      max-width: rem(100px);
+      position: relative;
+
+      @include xs {
+        color: $mc;
+      }
+
+      &:hover {
+        @include xs {
+          color: transparent;
+        }
+      }
+
+      &:before {
+        position: absolute;
+        content: '';
+        font-family: 'fonticon';
+        color: $wc;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: rem(17px);
+        display: none;
+
+        @include xs {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__input {
+    height: rem(130px);
+    width: 100%;
+    max-width: 85%;
+
+    @include lg {
+      max-width: 80%;
+      height: rem(100px);
+    }
+
+    @include md {
+      max-width: 75%;
+      height: rem(70px);
+    }
+
+    @include sm {
+      max-width: 70%;
+      height: rem(50px);
+      padding: 20px 0;
+    }
+
+    @include xs {
+      height: rem(30px);
+    }
+
+    input {
+      width: 100%;
+      height: 100%;
+      font-size: rem(24px);
+
+      @include lg {
+        font-size: rem(22px);
+      }
+
+      @include md {
+        font-size: rem(20px);
+      }
+
+      @include sm {
+        font-size: rem(18px);
+      }
+
+      @include xs {
+        font-size: rem(16px);
+      }
+    }
+
+    ::-webkit-input-placeholder {
+      font-size: rem(30px);
+      color: #777777;
+      font-weight: 300;
+
+      @include lg {
+        font-size: rem(25px);
+      }
+
+      @include md {
+        font-size: rem(20px);
+      }
+
+      @include sm {
+        font-size: rem(18px);
+      }
+
+      @include xs {
+        font-size: rem(16px);
+      }
+    }
+
+    ::-moz-placeholder {
+      font-size: rem(30px);
+      color: #777777;
+      font-weight: 300;
+
+      @include lg {
+        font-size: rem(25px);
+      }
+
+      @include md {
+        font-size: rem(20px);
+      }
+
+      @include sm {
+        font-size: rem(18px);
+      }
+
+      @include xs {
+        font-size: rem(16px);
+      }
+    }
+
+
+    :-moz-placeholder {
+      font-size: rem(30px);
+      color: #777777;
+      font-weight: 300;
+
+      @include lg {
+        font-size: rem(25px);
+      }
+
+      @include md {
+        font-size: rem(20px);
+      }
+
+      @include sm {
+        font-size: rem(18px);
+      }
+
+      @include xs {
+        font-size: rem(16px);
+      }
+    }
+
+
+    :-ms-input-placeholder {
+      font-size: rem(30px);
+      color: #777777;
+      font-weight: 300;
+
+      @include lg {
+        font-size: rem(25px);
+      }
+
+      @include md {
+        font-size: rem(20px);
+      }
+
+      @include sm {
+        font-size: rem(18px);
+      }
+
+      @include xs {
+        font-size: rem(16px);
+      }
+    }
+  }
+
+  &__close {
+    transition: $tr;
+    cursor: pointer;
+
+    &:hover {
+      color: $mc;
+    }
+  }
+
+  &.open-search {
+    top: 0;
+  }
+}
+
+// search end
+
+
+// breadcrumbs
+.breadcrumbs {
+  margin-bottom: rem(18px);
+
+  &__item {
+    padding-right: rem(24px);
+    margin-right: rem(7px);
+    position: relative;
+    display: inline-block;
+    color: #c4c4c4;
+    cursor: default;
+    font-size: rem(14px);
+
+    &:after {
+      position: absolute;
+      content: '';
+      width: rem(10px);
+      height: rem(1px);
+      background-color: #c4c4c4;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+
+    &:last-child {
+      padding-right: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    color: #c4c4c4;
+
+    &:hover {
+      color: $mc;
+    }
+  }
+}
+
+// breadcrumbs end
+
+// title 
+
+.title {
+  color: $bc;
+  font-size: rem(20px);
+  margin-bottom: rem(20px);
+  position: relative;
+}
+
+// title end
+
+
+// text
+.text {
+
+  p {
+    color: $bc;
+    line-height: rem(20px);
+    margin-bottom: rem(20px);
+
+    @include xs {
+      font-size: rem(15px);
+      line-height: rem(18px);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  p,
+  ol,
+  ul {
+    margin-bottom: rem(20px);
+  }
+
+  ol,
+  ul {
+    li {
+      margin-bottom: rem(10px);
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  ol {
+    padding-left: rem(20px);
+  }
+
+  &.text-detail {
+    padding-bottom: rem(30px);
+    border-bottom: rem(1px) solid #C4C4C4;
+  }
+}
+
+// text end
+
+// layout
+.layout {
+  padding: rem(40px) 0;
+  background-color: $wc;
+}
+
+// layout end
+
+
+// more 
+.more {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $bc;
+  text-transform: uppercase;
+  font-size: rem(13px);
+
+  &:hover {
+    color: $mc;
+  }
+}
+
+// more end
+
+
+// filter selectdrop down
+.filter {
+  margin-bottom: rem(20px);
+
+  form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  span {
+    margin-right: 9px;
+    display: block;
+    font-size: rem(14px);
+    color: #cccdcc;
+  }
+
+  .select {
+    position: relative;
+    padding-right: rem(15px);
+    cursor: pointer;
+
+    &:hover {
+      &:before {
+        color: $mc;
+      }
+    }
+
+    &:before {
+      position: absolute;
+      content: '';
+      font-family: "fonticon";
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%) rotate(180deg);
+      color: $bc;
+      font-size: rem(10px);
+      transition: $tr;
+    }
+
+    &__dropdown {
+      display: none;
+      position: absolute;
+      background-color: $wc;
+      z-index: 10;
+      box-sizing: content-box;
+      min-width: rem(245px);
+      margin-top: rem(15px);
+      box-shadow: 2px 4.6px 11.1px 2px rgba(0, 0, 0, 0.24);
+    }
+
+    &__option,
+    .select_checked {
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      box-sizing: border-box;
+      font-weight: 500;
+    }
+
+    &__option {
+      color: $bc;
+
+      transition: $tr;
+      padding: rem(7px) rem(15px) rem(5px);
+
+      &:hover {
+        background-color: $mc;
+      }
+    }
+  }
+}
+
+// filter select dropdown end
+
+
+.cols-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .main-col {
+    max-width: rem(865px);
+    width: 100%;
+    margin-left: rem(30px);
+
+    @include lg {
+      margin-right: rem(10px);
+    }
+
+    @include sm {
+      margin: 0;
+    }
+
+  }
+
+  .secondary-col {
+    max-width: rem(279px);
+    width: 100%;
+
+    @include lg {
+      max-width: rem(250px);
+    }
+
+    @include md {
+      max-width: rem(240px);
+    }
+
+
+    @include sm {
+      display: none;
+    }
+
+  }
+}
+
+.mm-listitem {
+  a {
+    font-size: rem(12px);
+    padding: 10px;
+  }
+}
+
+.mm-btn_next:after,
+.mm-btn_prev:before {
+  margin-right: rem(-15px);
+}

@@ -1,0 +1,31 @@
+.social-media {
+  &__desc {
+    position: absolute;
+    top: 200%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba($bc, .7);
+    color: $wc;
+    font-size: rem(14px);
+    line-height: 16px;
+    padding: rem(15px);
+    transition: $tr;
+  }
+
+  &__date {
+    display: block;
+    margin-bottom: rem(13px);
+  }
+
+  .swiper-slide {
+    overflow: hidden;
+    line-height: 0;
+
+    &:hover {
+      .social-media__desc {
+        top: 0;
+      }
+    }
+  }
+}

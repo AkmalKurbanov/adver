@@ -1,1 +1,89 @@
-div 2
+footer.footer
+  .container
+    .footer__wrap
+      .footer__col
+        .footer__logo
+          a(href="#")
+            img(src="/assets/img/logo-footer.png", alt="")
+      .footer__col
+        .footer__nav.nav
+          a(href="#") УСЛУГИ
+          ul
+            mixin item(item)
+              li
+                a(href="#")=item
+            +item('Разработка сайтов')          
+            +item('Полиграфия')          
+            +item('Дизайн')          
+            +item('Продакнш')          
+            +item('Медиа размещения')          
+            +item('Наружная реклама')          
+            +item('Издательство')          
+            +item('Event')          
+      .footer__col
+        .footer__nav.nav
+          a(href="#") Компания      
+          ul
+            +item('Разработка сайтов')          
+            +item('Полиграфия')          
+            +item('Дизайн')          
+            +item('Продакнш')          
+            +item('Медиа размещения')          
+            +item('Наружная реклама')          
+            +item('Издательство')          
+            +item('Event')              
+
+      .footer__col
+        .btn-wrap
+          .btn.ask-js ЗАДАТЬ ВОПРОС
+          .footer__contacts.footer-contacts
+            .footer-contacts__items
+              a(href="#" class="footer-contacts__item") 
+                i.icon-mark2
+                | г.Бишкек     
+
+          .footer-contacts__items
+            .dropdown-wrap
+              a(href="#" class="callback") 
+                i.icon-phone
+                | 755 21 7779 
+              .dropdown
+                .dropdown__wrap
+                  mixin phone(phone, title)
+                    .dropdown__item
+                      a(href="ertrytryt" class="dropdown__phone")=phone 
+                        span.dropdown-wrap__title=title
+                  +phone('755 21 7777','Отдел продаж')
+                  +phone('755 21 7776','Бухгалтерия')
+            a(href="#" class="dropdown-wrap__title callback-js") Заказать звонок
+
+          .footer-contacts__items
+            .dropdown-wrap
+              a(href="#" class="dropdown__mail")
+                i.icon-envelope
+                | office@adver.kg
+              .dropdown
+                .dropdown__wrap
+                  mixin mail(mail, title)
+                    .dropdown__item
+                      a(href="#" class="dropdown__mail")=mail 
+                        span.dropdown-wrap__title=title
+                  +mail('office@adver.kg1','Отдел продаж')
+                  +mail('office@adver.kg','Бухгалтерия')     
+          .footer-contacts__items       
+            .footer-contacts__item  
+              i.icon-mark
+              | Рекламный холдинг “Adver Group” Кыргызская Республика, г.Бишкек,ул.Малдыбаева 73.
+    .footer__social
+      ul
+        mixin social(icon)
+          li
+           a(href="#")
+            i(class=icon)          
+        +social('icon-fb', 'fb')          
+        +social('icon-vk', 'vk')          
+        +social('icon-tw', 'tw')          
+        +social('icon-in', 'in')
+    .footer__copy        
+      p &copy; Все права защищены         
+  

@@ -3,13 +3,17 @@
   display: flex;
   align-items: center;
   border-bottom: rem(1px) solid #ECECEC;
-  z-index: 2;
+  z-index: 9;
+  padding: 0 rem(40px) 0 0;
+  background-color: $wc;
 
-  &_flush {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+  @include sm {
+    padding-right: rem(15px);
+  }
+
+  @include xs {
+    min-height: auto;
+    padding: rem(15px);
   }
 
   &__wrap {
@@ -27,13 +31,30 @@
 
   &__logo {
     max-width: rem(72px);
-    margin: 0 rem(75px) 0 rem(125px);
+    margin: 0 rem(75px) 0 rem(55px);
+
+    @media screen and (max-width: 1599.98px) {
+      margin: 0 rem(30px);
+    }
+
+    @include xs {
+      margin: 0 rem(10px);
+      max-width: rem(55px);
+    }
   }
 
   .nav {
+    @include lg {
+      display: none;
+    }
+
     &__item {
       display: inline-block;
       margin-right: rem(50px);
+
+      @media screen and (max-width: 1599.98px) {
+        margin-right: rem(15px);
+      }
 
       &:last-child {
         margin-right: 0;
@@ -43,14 +64,18 @@
         text-transform: uppercase;
         color: $bc;
 
+        @media screen and (max-width: 1599.98px) {
+          font-size: rem(13px);
+        }
+
         &:hover {
-          color: #cf3c3a;
+          color: $mc;
         }
       }
 
       &_active {
         a {
-          color: #cf3c3a;
+          color: $mc;
         }
       }
     }
@@ -60,9 +85,21 @@
     position: relative;
     margin-right: rem(45px);
 
+    @media screen and (max-width: 1599.98px) {
+      margin-right: rem(35px);
+    }
+
+    @include sm {
+      display: none;
+    }
+
     a {
-      color: $wc;
+      color: $bc;
       display: block;
+
+      @media screen and (max-width: 1599.98px) {
+        font-size: rem(14px);
+      }
 
       &:after {
         position: absolute;
@@ -87,18 +124,52 @@
       transform: translateY(-40%);
     }
 
-
-
     .search-trigger {
       cursor: pointer;
       margin-left: rem(55px);
 
+      &:hover {
+        i {
+          color: $mc;
+        }
+      }
+
       i {
         font-size: rem(16px);
-        color: $wc;
+        color: $bc;
+        transition: $tr;
       }
     }
   }
+
+  &__mobile-control {
+    display: none;
+
+    ul {
+      li {
+        display: inline-block;
+        margin-right: rem(15px);
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        span {
+          cursor: pointer;
+
+          i {
+            color: $mc !important;
+          }
+        }
+      }
+    }
+
+    @include sm {
+      display: block;
+    }
+  }
+
+
 
   &__control-dropdown,
   .dropdown-wrap {
@@ -120,49 +191,49 @@
   }
 
 
-  .hamburger {
-    width: rem(16px);
-    padding: rem(20px);
-    cursor: pointer;
-
-    &:hover {
+  &_flush {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    .hamburger {
       i {
-        background-color: #333;
+        background-color: $wc;
+      }
+    }
 
-        &:nth-child(2) {
-          width: rem(11px);
-        }
+    .nav__item {
+      a {
+        color: $wc;
+      }
 
-        &:last-child {
-          width: 100%;
+      &_active {
+        a {
+          color: $mc;
         }
       }
     }
 
-    i {
-      height: 2px;
-      width: 100%;
-      background-color: $bc;
-      transition: $tr;
-      display: block;
-      margin-bottom: rem(3px);
+    .search-trigger {
+      i {
+        color: $wc;
+      }
+    }
 
-
-      &:last-child {
-        width: rem(11px);
-        margin-bottom: 0;
+    .header__control {
+      a {
+        color: $wc;
       }
     }
   }
-
 }
 
 .dropdown-wrap {
   position: relative;
 
-
   a {
-    color: $wc;
+    color: $bc;
     display: block;
 
     &:after {
@@ -214,7 +285,7 @@
 
     &__item {
       border-bottom: rem(1px) solid #f2f2f2;
-      
+
       a {
         padding: rem(18px) rem(22px) rem(35px);
         display: block;
@@ -241,6 +312,14 @@
     display: block;
     margin-top: rem(5px);
 
+    @media screen and (max-width: 1599.98px) {
+      font-size: rem(8px) !important;
+    }
+
+    @include sm {
+      position: relative;
+    }
+
     &:hover {
       color: #ccc;
     }
@@ -249,5 +328,65 @@
       display: none;
     }
   }
+}
 
+.mobile-menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  background-color: $wc;
+  display: none;
+
+  ul {
+    li {
+      border-bottom: 1px solid #eff1f5;
+
+      &:first-child {
+        padding: rem(20px) rem(10px);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        font-size: rem(14px);
+
+        span {
+          transition: $tr;
+          cursor: pointer;
+
+          &:hover {
+            color: $mc;
+          }
+        }
+      }
+
+      &:last-child {
+        a {
+          color: $mc;
+          text-transform: uppercase;
+        }
+      }
+
+      a {
+        padding: rem(20px) rem(10px);
+        box-sizing: content-box;
+        display: block;
+        color: $bc;
+
+        &:hover {
+          color: $mc;
+        }
+
+        span {
+          display: block;
+          color: #999;
+          margin-top: rem(10px);
+        }
+      }
+    }
+  }
+
+  &.mobile-menu-open {
+    display: block;
+  }
 }

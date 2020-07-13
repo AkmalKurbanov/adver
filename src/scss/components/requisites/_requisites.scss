@@ -1,0 +1,21 @@
+.requisites {
+  &__item {
+    border-bottom: rem(1px) solid #c4c4c4;
+    padding: rem(10px);
+    
+    @include sm {
+      font-size: rem(14px);
+      padding: rem(7px) rem(5px);
+    }
+
+    * {
+      color: $bc;
+    }
+
+    a {
+      &:hover {
+        color: $mc;
+      }
+    }
+  }
+}

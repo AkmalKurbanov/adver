@@ -1,9 +1,24 @@
 .sliding-panel {
   padding: rem(20px) rem(25px);
-  position: relative;
+  position: fixed;
   max-width: rem(358px);
   width: 100%;
   transition: $tr;
+  top: 0;
+  bottom: 0;
+  z-index: 9;
+  background-color: $wc;
+  right: -200%;
+  transition: $tr;
+  box-sizing: border-box;
+
+  @include xs {
+    padding: rem(15px);
+  }
+
+  &.open-panel {
+    right: 0;
+  }
 
   &__close {
     position: absolute;
@@ -11,9 +26,10 @@
     right: rem(25px);
     cursor: pointer;
     transition: $tr;
+    z-index: 1;
 
     &:hover {
-      color: #cf3c3a;
+      color: $mc;
     }
   }
 
@@ -89,7 +105,7 @@
         transition: $tr;
 
         &:hover {
-          color: #cf3c3a;
+          color: $mc;
         }
       }
     }
@@ -114,7 +130,7 @@
       outline: none;
       border: none;
       resize: none;
-      
+
       &:focus~label,
       &:valid~label {
         transform: translateY(-15px);
@@ -177,4 +193,27 @@
     }
   }
 
+  .map {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    #map {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      .leaflet-top.leaflet-right {
+        top: rem(70px);
+        left: rem(10px);
+        right: auto;
+      }
+    }
+  }
 }

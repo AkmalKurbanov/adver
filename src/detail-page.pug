@@ -1,0 +1,83 @@
+extends layout/main/main
+block title
+  | detail-page
+block main
+  .wrapper
+    .content
+      - var headerFlush = false
+        include includes/header/header
+        .about.layout
+          .container
+            include includes/breadcrumbs/breadcrumbs
+            +breadcrumbs(['главная','Услуги'], 'Наружная реклама')
+            .title-wrap
+              .title Наружная реклама
+
+            .cols-wrap
+              .secondary-col
+                mixin list(data)
+                  ul
+                    each item, index in  data.items
+                      if index == 0
+                        li.sidebar__item.sidebar__item_active
+                          a(href="#")=item.title
+                          if item.sublevel 
+                            .trigger-sub-menu
+                              i.icon-arrow3
+                            +list(item)
+                      else
+                        li.sidebar__item
+                          a(href="#")=item.title
+                          if item.sublevel 
+                            +list(item)
+
+                aside.sidebar
+                .sidebar__list
+                  - var data = { "items": [{"title": "Биллборды"}, {"title": "Мегаборды", "sublevel": false, "items":[{"title": "Второй уровень"}]}, {"title": "Реклама на транспорте"},{"title": "Реклама на остановках"},{"title": "Обьемные буквы"},{"title": "Наружная реклама"},{"title": "Дислокация"}]}
+                  +list(data)
+
+                .sidebar__list
+                  ul
+                    
+                    li.sidebar__item
+                      a(href="#" class="callback-js")
+                        i.icon-phone
+                        | Заказать звонок
+
+                    li.sidebar__item
+                      a(href="#" class="ask-js")
+                        i.icon-envelope
+                        | Написать сообщение
+
+                    li.sidebar__item
+                      a(href="#" class="location-js")
+                        i.icon-mark
+                        | Ближайший офис 
+                
+              .main-col
+                  .about__img
+                    img(src="./assets/img/detail-page.jpg", alt="")
+
+                  .text
+                    p Одним из самых эффективных видов рекламы считается наружная реклама. Поэтому спрос на этот вид рекламной продукции постоянен. Вдоль дорог и улиц города размещается наружная реклама, представляющая собой рекламные щиты с размерами 3x6м. Так же мы готовы предоставить нашим клиентам нестандартные рекламные площадки.
+                    
+                    ul.with-dots
+                      mixin dotsList(item)
+                        li=item 
+                      +dotsList('Самая широкая сеть по биллбордам и мегабордам по Кыргызстану')
+                      +dotsList('Высокое качество широкоформатной печати')
+                      +dotsList('Оперативные и точные сроки')
+                    
+                    p От места размещения рекламной конструкции зависит многое. Очевидно, что лучше всего размещать наружную рекламу в местах, отличающихся большой проходимостью. Рекламное агентство Adver Group располагает большими возможностями размещения вашей рекламы в Бишкеке и регионах Кыргызстана. Обо всех интересующих вопросах в сфере наружной рекламы можно расспросить наших менеджеров.
+          
+
+
+     
+
+    include includes/footer/footer
+
+  include includes/callback/callback
+  include includes/question/question
+  include includes/map/map
+
+  include includes/scripts 

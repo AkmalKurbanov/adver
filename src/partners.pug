@@ -1,0 +1,48 @@
+extends layout/main/main
+block title
+  | partners
+block main
+  .wrapper
+    .content
+      - var headerFlush = false
+        include includes/header/header
+        .partners.layout
+          .container
+            include includes/breadcrumbs/breadcrumbs
+            +breadcrumbs(['главная', 'О компании'],'Партнеры')
+            .title-wrap
+              .title Партнеры
+
+            .cols-wrap
+              .secondary-col
+                include includes/sidebar/sidebar
+              .main-col
+                .text.text-detail
+                  p Холдинг Adver Group заслужил хорошую репутацию, что доказывает сотрудничество с крупными партнёрами (Нуртелеком, Торговая Сеть Народный и др.). Ознакомьтесь с примерами работ, изучив портфолио. Получить представление о нашей деятельность можно, также прочитав отзывы клиентов. База признания насчитывает около 300 сертификатов качества и рекомендательных писем.
+                .partners__list
+                  mixin partners(item)
+                    .partners__item
+                      img(src=item, alt="")
+                  +partners('./assets/img/partners1.svg')
+                  +partners('./assets/img/partners2.svg')
+                  +partners('./assets/img/partners3.svg')
+                  +partners('./assets/img/partners4.svg')
+                  +partners('./assets/img/partners3.svg')
+                  +partners('./assets/img/partners2.svg')
+          
+
+
+     
+
+    include includes/footer/footer
+
+  include includes/callback/callback
+  include includes/question/question
+  include includes/map/map
+
+  include includes/scripts 
+
+
+        +breadcrumbs(['главная','О компании'], 'Партнеры')
+            .title-wrap
+              .title Партнеры 

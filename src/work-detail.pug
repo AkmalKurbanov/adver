@@ -1,0 +1,38 @@
+extends layout/main/main
+block title
+  | work-detail
+block main
+  .wrapper
+    .content
+      - var headerFlush = false
+        include includes/header/header
+        .works.layout
+          .container
+            include includes/breadcrumbs/breadcrumbs
+            +breadcrumbs(['главная'],'Наши работы')
+            .title-wrap
+              .title Журнал
+            .works__img-detail
+              img(src="./assets/img/work-detail.jpg", alt="")  
+              .works__date
+                .works__date-item Клиент: # one magazine  
+                .works__date-item Дата: 10 мая 2018
+                .works__date-item Категория: Полиграфия
+            .text
+              p Насколько эффективна наша работа наглядно продемонстрирует портфолио. Ознакомьтесь с проектами, которые выполняла команда Эдвер Групп. За годы практики мы хорошо изучили рынок, в штат входят эксперты разной специализации, поэтому мы успешно работаем в любой сфере.
+              p В каталоге представлен не полный список проектов. Если вы не нашли интересующий вас пример, или хотите получить комментарии по имеющимся работам, свяжитесь с наши. Оператор предоставит любую интересующую Вас информацию. Получите прибыль и популярность, как и все наши клиенты, доверяя нам рекламу бизнеса!
+
+
+          
+
+
+     
+
+    include includes/footer/footer
+
+  include includes/search/search
+  include includes/callback/callback
+  include includes/question/question
+  include includes/map/map
+
+  include includes/scripts 

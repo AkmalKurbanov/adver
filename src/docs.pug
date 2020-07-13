@@ -1,0 +1,46 @@
+extends layout/main/main
+block title
+  | docs
+block main
+  .wrapper
+    .content
+      - var headerFlush = false
+        include includes/header/header
+        .layout
+          .container
+            include includes/breadcrumbs/breadcrumbs
+            +breadcrumbs(['главная', 'О компании'],'Документы')
+            .title-wrap
+              .title Документы
+
+            .cols-wrap
+              .secondary-col
+                include includes/sidebar/sidebar
+              .main-col
+                .text.text-detail
+                  p В данном разделе приведены ответы на часто задаваемые вопросы посетителей вашего будущего сайта. Использование данного раздела позволит сократить нагрузку на операторов и повысить удовлетворенность ваших клиентов.
+                .tabs
+                  .tabs__list
+                    include includes/tabs/tabs
+                    +tabs('НАРУЖНАЯ РЕКЛАМА','active')
+                    +tabs('ТИПОГРАФИЯ')
+                    +tabs('РАЗРАБОТКА САЙТА')
+                .accordion
+                  .accordion__list
+                    include includes/accordion/accordion
+                    +accordion('Как можно оформить заказ?')
+                    +accordion('Как можно оформить заказ1?')
+                    +accordion('Как можно оформить заказ2?')
+
+
+     
+
+    include includes/footer/footer
+
+  include includes/callback/callback
+  include includes/question/question
+  include includes/map/map
+
+  include includes/scripts 
+
+

@@ -1,0 +1,104 @@
+.accordion {
+  &__list {}
+
+  &__item {
+    position: relative;
+    border: rem(1px) solid #F0F0F0;
+    margin-bottom: rem(5px);
+
+    &.active {
+      .accordion__trigger {
+        transform: translateY(-50%) rotate(180deg);
+        background-color: $mc;
+        border-color: $mc;
+
+        i {
+          color: $wc;
+        }
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    padding: rem(20px) rem(55px) rem(20px) rem(20px);
+    color: $bc;
+
+    @include sm {
+      font-size: 14px;
+      padding: rem(15px) rem(35px) rem(15px) rem(15px);
+    }
+  }
+
+  &__trigger {
+    width: rem(26px);
+    height: rem(26px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: rem(1px) solid #F0F0F0;
+    border-radius: rem(3px);
+    transition: $tr;
+    position: absolute;
+    right: rem(20px);
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include sm {
+      right: rem(10px);
+      width: rem(20px);
+      height: rem(20px);
+    }
+
+    &:hover {
+      background-color: $mc;
+      border-color: $mc;
+
+      i {
+        color: $wc;
+      }
+    }
+
+    i {
+      font-size: rem(6px);
+      color: #c4c4c4;
+      position: absolute;
+      margin-left: rem(-3px);
+      margin-top: rem(1px);
+    }
+  }
+
+  &__desc {
+    padding: 0 rem(20px) rem(20px);
+    background-color: $wc;
+    display: none;
+
+    @include sm {
+      padding: 0 rem(15px) rem(15px);
+    }
+
+    p {
+      color: $bc;
+      padding-bottom: rem(20px);
+
+      @include sm {
+        font-size: rem(14px);
+      }
+    }
+
+    ol,
+    ul {
+      margin-bottom: rem(20px);
+      padding-left: rem(30px);
+
+      li {
+        color: $bc;
+
+        @include sm {
+          font-size: rem(14px);
+        }
+      }
+    }
+  }
+}

@@ -4,48 +4,86 @@
      pagination: {
        el: '.swiper-pagination',
        clickable: true
-     },
+     }
    });
 
-   
-   // type on effect
 
-   var words = document.getElementById("title");
-   var transfer = words.innerHTML;
-   var letters = transfer.slice(0, words.length);
-
-
-   var type = typeWriter();
-   var go = author();
-
-
-   go();
-
-
-   function author() {
-     count = 0;
-     return function () {
-       if (count >= letters.length) {
-         return
-       } else {
-         type();
-         count += 1;
-         setTimeout(function () {
-           go();
-         }, (Math.random() * 100))
+   var swiper = new Swiper('.services-slider-js', {
+     loop: true,
+     slidesPerView: 4,
+     autoplay: {
+       delay: 2500,
+       disableOnInteraction: false,
+     },
+     breakpoints: {
+       991: {
+         slidesPerView: 4,
+       },
+       767: {
+         slidesPerView: 3,
+       },
+       400: {
+         slidesPerView: 2,
+       },
+       0: {
+         slidesPerView: 1,
        }
      }
-   }
+   });
 
-   function typeWriter() {
-     var i = 0;
-     words.innerHTML = "";
-     return function () {
-       if (i >= letters.length) {
-         return
-       };
-       i += 1;
-       words.innerHTML += letters.slice(i - 1, i);
+   var swiper = new Swiper('.partners-js', {
+     loop: true,
+     slidesPerView: 4,
+     autoplay: {
+       delay: 3000,
+       disableOnInteraction: false,
+     },
+     navigation: {
+       nextEl: '.next',
+       prevEl: '.prev',
+     },
+     breakpoints: {
+       1199: {
+         slidesPerView: 4,
+       },
+       991: {
+         slidesPerView: 3,
+       },
+       767: {
+         slidesPerView: 2,
+       },
+       400: {
+         slidesPerView: 2,
+       },
+       0: {
+         slidesPerView: 1,
+       }
      }
-   }
-   // type on effect end
+   });
+
+   var swiper = new Swiper('.social-media-js', {
+     loop: true,
+     slidesPerView: 4,
+     autoplay: {
+       delay: 5000,
+       disableOnInteraction: false,
+     },
+     navigation: {
+       nextEl: '.next',
+       prevEl: '.prev',
+     },
+     breakpoints: {
+       1199: {
+         slidesPerView: 4,
+       },
+       991: {
+         slidesPerView: 3,
+       },
+       767: {
+         slidesPerView: 2,
+       },
+       0: {
+         slidesPerView: 1,
+       }
+     }
+   });

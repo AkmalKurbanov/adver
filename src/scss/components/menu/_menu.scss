@@ -1,18 +1,24 @@
 .menu {
   display: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $wc;
+  z-index: 9999;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding: rem(30px) rem(15px);
+  box-sizing: border-box;
+
+
 
   &__container {
     max-width: rem(1230px);
     width: 100%;
     margin: auto;
   }
-
-  background-color: $wc;
-  z-index: 9999;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  padding: rem(30px) 0;
 
   &__control {
     display: flex;
@@ -42,7 +48,7 @@
     transition: $tr;
 
     &:hover {
-      color: #cf3c3a;
+      color: $mc;
     }
   }
 
@@ -70,6 +76,10 @@
   .search {
     margin-bottom: rem(65px);
 
+    @include md {
+      margin-bottom: rem(40px);
+    }
+
     &__field-wrap {
       border: rem(1px) solid #C4C4C4;
       border-radius: rem(3px);
@@ -81,6 +91,7 @@
       width: 100%;
       padding: 0 rem(50px) 0 rem(19px);
       color: #c0baba;
+      box-sizing: border-box;
     }
 
     &__button {
@@ -104,6 +115,10 @@
     justify-content: flex-end;
     margin-bottom: rem(65px);
 
+    @include md {
+      margin-bottom: rem(40px);
+    }
+
     .btn {
       max-width: rem(279px);
       width: 100%;
@@ -116,7 +131,7 @@
       justify-content: space-between;
 
       li {
-        flex-basis: 24%;
+        flex-basis: 30%;
 
         &.nav__item_active {
           .trigger-sub-menu {
@@ -130,8 +145,12 @@
           color: $bc;
           font-weight: 400;
 
+          @include md {
+            font-size: rem(13px);
+          }
+
           &:hover {
-            color: #CF3C3A !important;
+            color: $sc !important;
           }
         }
 
@@ -139,6 +158,10 @@
           display: flex;
           flex-direction: column;
           margin-top: rem(20px);
+
+          @include md {
+            margin-top: rem(15px);
+          }
 
           li {
             margin-bottom: rem(10px);
@@ -160,7 +183,7 @@
               .trigger-sub-menu {
                 position: absolute;
                 font-size: rem(7px);
-                color: #cf3c3a;
+                color: $sc;
                 cursor: pointer;
                 top: rem(2px);
                 right: 0;
@@ -190,7 +213,7 @@
               }
 
               a {
-                color: #CF3C3A;
+                color: $sc;
               }
 
               ul {
@@ -205,7 +228,7 @@
 
                   &.nav__item_active {
                     a {
-                      color: #CF3C3A;
+                      color: $sc;
                     }
                   }
                 }
@@ -233,6 +256,10 @@
       display: inline-block;
       padding-right: rem(10px);
 
+      @include md {
+        font-size: rem(14px);
+      }
+
       i {
         position: absolute;
         left: 0;
@@ -259,6 +286,10 @@
     &__items {
       margin-bottom: rem(25px);
 
+      @include md {
+        margin-bottom: rem(15px);
+      }
+
       &:last-child {
         margin-bottom: 0;
 
@@ -277,6 +308,9 @@
       padding-right: rem(10px);
       color: $bc;
 
+      @include md {
+        font-size: rem(14px);
+      }
 
       &:after {
         right: 0;
@@ -305,21 +339,48 @@
       font-size: 12px;
     }
   }
+
+  .cols-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .main-col {
+      max-width: rem(865px);
+      width: 100%;
+      margin-left: 0 !important;
+
+      @include lg {
+        margin-right: rem(10px);
+      }
+    }
+
+    .secondary-col {
+      max-width: rem(279px);
+      width: 100%;
+
+    }
+  }
 }
 
-.cols-wrap {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 
-  .main-col {
-    max-width: rem(865px);
-    width: 100%;
+
+.mm-listitem:after {
+  left: 0 !important;
+}
+
+.mm-slideout {
+  z-index: inherit;
+}
+
+#googlemap {
+  height: rem(700px);
+
+  @include lg {
+    height: rem(500px);
   }
 
-  .secondary-col {
-    max-width: rem(279px);
-    width: 100%;
-
+  @include md {
+    height: rem(400px);
   }
 }
