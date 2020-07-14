@@ -11,7 +11,7 @@
   right: -200%;
   transition: $tr;
   box-sizing: border-box;
-  
+
   @include xs {
     padding: rem(15px);
   }
@@ -214,11 +214,12 @@
       bottom: 0;
       left: 0;
 
-      .leaflet-top.leaflet-right {
-        top: rem(70px) !important;
-        left: rem(10px) !important;
-        right: auto !important;
-      }
     }
   }
+}
+
+.leaflet-top.leaflet-right {
+  top: rem(70px) !important;
+  left: rem(10px) !important;
+  right: auto !important;
 }
